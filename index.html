@@ -1018,7 +1018,7 @@ function parseHash() {
   return { y: ED || '1994', h: raw, pref: false };
 }
 function loadEd(y) {
-  if (!CACHE[y]) CACHE[y] = fetch(`data/${y}.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  if (!CACHE[y]) CACHE[y] = fetch(`${y}.json`).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
   return CACHE[y];
 }
 function setBand() {
@@ -1040,7 +1040,7 @@ function setBand() {
 const PK = {};
 function loadPk(name) {
   const key = `${ED}-${name}`;
-  if (!PK[key]) PK[key] = fetch(`data/ph-${key}.json`).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+  if (!PK[key]) PK[key] = fetch(`ph-${key}.json`).then(r => r.ok ? r.json() : {}).catch(() => ({}));
   return PK[key];
 }
 function hydrate(root = app) {
