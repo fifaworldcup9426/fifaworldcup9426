@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mundiales 1994–2026</title>
+<meta name="description" content="Enciclopedia de los Mundiales de fútbol: selecciones, jugadores, seleccionadores y partidos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --night: #0b1530;
+    --gold: #e8c26a;
+    --ink: #f6f3ea;
+    --muted: #c9cde0;
+    --line: rgba(246, 243, 234, .28);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    background: var(--night);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 2.5rem;
+    padding: clamp(1.25rem, 4vw, 3.5rem);
+    padding-top: calc(clamp(1.25rem, 4vw, 3.5rem) + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(clamp(1.25rem, 4vw, 3.5rem) + env(safe-area-inset-bottom, 0px));
+    background:
+      linear-gradient(90deg, rgba(11,21,48,.88) 0%, rgba(11,21,48,.55) 38%, rgba(11,21,48,0) 62%),
+      linear-gradient(0deg, rgba(11,21,48,.92) 0%, rgba(11,21,48,.35) 42%, rgba(11,21,48,0) 70%),
+      url("portada.webp") 62% center / cover no-repeat;
+    overflow: hidden;
+  }
+  .title { max-width: 40rem; }
+  .title p { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.5; max-width: 32rem; }
+  h1 {
+    font-family: "Big Shoulders Display", Impact, sans-serif;
+    font-weight: 900;
+    font-size: clamp(4.5rem, 15vw, 11rem);
+    line-height: .86;
+    letter-spacing: -.01em;
+    margin-bottom: 1rem;
+  }
+  h1 span { display: block; color: var(--gold); font-size: .42em; line-height: 1; margin-top: .12em; letter-spacing: .02em; }
+
+  nav ul {
+    list-style: none; padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    border-top: 1px solid var(--line);
+  }
+  nav li { border-bottom: 1px solid var(--line); }
+  nav a {
+    display: flex; flex-direction: column; gap: .15rem;
+    padding: .9rem .25rem .9rem 0;
+    color: inherit; text-decoration: none;
+    transition: color .15s ease, padding-left .15s ease;
+  }
+  nav .year {
+    font-family: "Big Shoulders Display", Impact, sans-serif;
+    font-weight: 700; font-size: 2rem; line-height: 1;
+  }
+  nav .host { font-size: .85rem; color: var(--muted); }
+  nav a:hover, nav a:focus-visible { color: var(--gold); padding-left: .5rem; }
+  nav a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  nav li.latest .year { color: var(--gold); }
+  nav li.latest .host::after { content: " · el más reciente"; }
+
+  @media (min-width: 900px) {
+    nav ul { grid-template-columns: repeat(9, 1fr); gap: 0 1.25rem; }
+  }
+  @media (max-width: 600px) {
+    .hero { background-position: 66% 20%; background-size: auto 78%, auto 78%, cover; }
+    nav ul { grid-template-columns: repeat(2, 1fr); gap: 0 1rem; }
+    nav li.latest { grid-column: 1 / -1; }
+  }
+  @media (prefers-reduced-motion: reduce) { nav a { transition: none; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="title">
+    <h1>Mundiales<span>1994–2026</span></h1>
+    <p>Selecciones, jugadores, seleccionadores y partidos de cada Copa Mundial de la FIFA. Elige una edición.</p>
+  </div>
+
+  <!-- Los enlaces apuntan a mundiales.html (tu página actual renombrada).
+       Si tu página usa otro formato para elegir la edición, cambia solo los href. -->
+  <nav aria-label="Ediciones del Mundial">
+    <ul>
+      <li><a href="mundiales.html#1994"><span class="year">1994</span><span class="host">EE. UU.</span></a></li>
+      <li><a href="mundiales.html#1998"><span class="year">1998</span><span class="host">Francia</span></a></li>
+      <li><a href="mundiales.html#2002"><span class="year">2002</span><span class="host">Corea y Japón</span></a></li>
+      <li><a href="mundiales.html#2006"><span class="year">2006</span><span class="host">Alemania</span></a></li>
+      <li><a href="mundiales.html#2010"><span class="year">2010</span><span class="host">Sudáfrica</span></a></li>
+      <li><a href="mundiales.html#2014"><span class="year">2014</span><span class="host">Brasil</span></a></li>
+      <li><a href="mundiales.html#2018"><span class="year">2018</span><span class="host">Rusia</span></a></li>
+      <li><a href="mundiales.html#2022"><span class="year">2022</span><span class="host">Catar</span></a></li>
+      <li class="latest"><a href="mundiales.html#2026"><span class="year">2026</span><span class="host">EE. UU., México y Canadá</span></a></li>
+    </ul>
+  </nav>
+</header>
+</body>
+</html>
